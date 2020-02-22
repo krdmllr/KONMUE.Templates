@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Konrad Müller",
+  "classifications": [
+    "Desktop"
+  ],
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "identity": "KONMUE.Xamarin.Forms.TrayApplication",
+  "groupIdentity":"KONMUE.Xamarin",
+  "name": "Xamarin Forms Tray Application",
+  "shortName": "xftray",
+  "sourceName": "CrossTrayApplicationSample",
+  "preferNameDirectory": true
+}
