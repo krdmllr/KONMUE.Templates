@@ -25,4 +25,4 @@ jobs:
     - name: Pack
       run: dotnet pack templates/Xamarin/KONMUE.Templates.Xamarin.csproj --configuration Release
     - name: Publish
-      run: dotnet nuget push "templates/Xamarin/bin/Release/*.nupkg" -Source "GPR"
+      run: dotnet nuget push "templates/Xamarin/bin/Release/*.nupkg" -s "GPR"
