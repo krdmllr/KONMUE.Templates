@@ -16,7 +16,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.2.108
-        source-url: https://nuget.pkg.github.com/krdmllr/KONMUE.Templates/index.json
+        source-url: https://nuget.pkg.github.com/krdmllr/index.json
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     - name: Pack
