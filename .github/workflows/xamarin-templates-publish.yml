@@ -16,10 +16,13 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.2.108
-        source-url: https://nuget.pkg.github.com/krdmllr/index.json
-      env:
-        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.2
+      with:
+        nuget-version: latest
+    - name: Setup NuGet GPR
+      run: nuget source Add -Name "GPR" -Source ${{ secrets.GPR_URL }} -UserName ${{ secrets.GITHUB_USERNAME }} -Password ${{ secrets.GITHUB_TOKEN }}
     - name: Pack
       run: dotnet pack templates/Xamarin/KONMUE.Templates.Xamarin.csproj --configuration Release
     - name: Publish
-      run: dotnet nuget push "templates/Xamarin/bin/Release/*.nupkg"
+      run: dotnet nuget push "templates/Xamarin/bin/Release/*.nupkg" -Source "GPR"
